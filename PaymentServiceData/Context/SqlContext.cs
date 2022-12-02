@@ -13,7 +13,7 @@ namespace PaymentServiceData.Context
         {
         }
 
-        public DbSet<Key> Transactions { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Payer> Payers { get; set; }
         public DbSet<Receiver> Receivers { get; set; }
         public DbSet<Key> Keys { get; set; }
