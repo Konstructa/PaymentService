@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PaymentServiceBusiness.Models;
-
+using PaymentServiceData.Mappings;
 
 namespace PaymentServiceData.Context
 {
     public class SqlContext : DbContext
     {
-        public SqlContext(DbContextOptions options) : base(options)
+        public SqlContext(DbContextOptions<SqlContext> options) : base(options)
         {
         }
 
@@ -17,8 +17,10 @@ namespace PaymentServiceData.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(SqlContext).Assembly);
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new KeyMapping());
+            modelBuilder.ApplyConfiguration(new PayerMapping());
+            modelBuilder.ApplyConfiguration(new ReceiverMapping());
+            modelBuilder.ApplyConfiguration(new TransactionMapping());
         }
     }
 }
