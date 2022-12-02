@@ -6,9 +6,9 @@ namespace PaymentServiceAPI.Controllers
     [Route("[controller]")]
     public class KeyController  : ControllerBase
     {
-        public ActionResult<> CreateKey()
-        {
+        //public ActionResult<> CreateKey()
+        //{
 
-        }
+        //}
     }
 }
