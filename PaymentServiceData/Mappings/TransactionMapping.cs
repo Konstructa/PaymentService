@@ -23,7 +23,7 @@ namespace PaymentServiceData.Mappings
                 .WithMany(p => p.Transactions)
                 .IsRequired();
 
-            builder.ToTable("Transactions");
+            builder.ToTable("Transaction");
         }
     }
 }

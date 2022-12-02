@@ -8,7 +8,7 @@ namespace PaymentServiceData.Mappings
     {
         public void Configure(EntityTypeBuilder<Receiver> builder)
         {
-            builder.HasKey(x => x.Key);
+            builder.HasKey(x => x.Id);
 
             builder.Property(t => t.Name)
                 .IsRequired()
